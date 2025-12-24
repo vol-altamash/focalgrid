@@ -43,6 +43,7 @@ export enum ToolType {
   CODE_ANALYSIS = 'code_analysis',
   VISUAL_REDESIGN = 'visual_redesign',
   LIVE_BRAINSTORM = 'live_brainstorm',
+  DEPLOYMENT = 'deployment',
 }
 
 export interface AnalysisResult {

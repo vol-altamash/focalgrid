@@ -21,6 +21,8 @@ import Layout from './components/Layout';
 import CodeTool from './components/CodeTool';
 import VisualTool from './components/VisualTool';
 import LiveTool from './components/LiveTool';
+import DeploymentTool from './components/DeploymentTool';
+import Chatbot from './components/Chatbot';
 import { ToolType } from './types';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -53,6 +55,7 @@ const App: React.FC = () => {
               {activeTool === ToolType.CODE_ANALYSIS && <CodeTool />}
               {activeTool === ToolType.VISUAL_REDESIGN && <VisualTool />}
               {activeTool === ToolType.LIVE_BRAINSTORM && <LiveTool />}
+              {activeTool === ToolType.DEPLOYMENT && <DeploymentTool />}
             </motion.div>
           </AnimatePresence>
         </Layout>
@@ -152,6 +155,7 @@ const App: React.FC = () => {
       </main>
 
       <Footer />
+      <Chatbot />
     </div>
   );
 };

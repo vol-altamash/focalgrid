@@ -34,6 +34,18 @@ export const analyzeCode = async (code: string, context: string) => {
   return JSON.parse(response.text);
 };
 
+export const chatWithGemini = async (message: string, history: { role: 'user' | 'model', parts: { text: string }[] }[]) => {
+  const ai = getAI();
+  const response = await ai.models.generateContent({
+    model: 'gemini-3-pro-preview',
+    contents: [...history, { role: 'user', parts: [{ text: message }] }],
+    config: {
+      systemInstruction: "You are the Focalgrid Systems AI assistant. You help users understand Focalgrid's services, solutions, and engineering excellence. You are professional, tech-forward, and helpful. Keep responses concise and insightful.",
+    },
+  });
+  return response.text;
+};
+
 export const redesignVisuals = async (description: string, currentImageUrl?: string) => {
   const ai = getAI();
   const parts: any[] = [{ text: `Generate a modern, high-fidelity UI redesign for an app with this description: ${description}` }];

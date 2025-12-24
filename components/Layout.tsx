@@ -14,6 +14,7 @@ const Layout: React.FC<LayoutProps> = ({ children, activeTool, setActiveTool, on
     { id: ToolType.CODE_ANALYSIS, icon: 'fa-code', label: 'Catalyst Upgrade' },
     { id: ToolType.VISUAL_REDESIGN, icon: 'fa-paint-brush', label: 'Vision Refresh' },
     { id: ToolType.LIVE_BRAINSTORM, icon: 'fa-microphone', label: 'Strategy Core' },
+    { id: ToolType.DEPLOYMENT, icon: 'fa-rocket', label: 'Production Stream' },
   ];
 
   return (

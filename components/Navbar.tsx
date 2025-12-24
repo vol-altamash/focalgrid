@@ -33,11 +33,15 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, onLaunchLab }) => {
         </div>
 
         <div className="hidden md:flex items-center space-x-4">
+           <div className="hidden xl:flex items-center space-x-2 mr-6 px-3 py-1 bg-emerald-500/5 rounded-full border border-emerald-500/10">
+              <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span>
+              <span className="text-[9px] font-black uppercase tracking-widest text-emerald-500/80">System Live</span>
+           </div>
            <button 
              onClick={onLaunchLab}
              className="text-focalTeal text-xs font-bold uppercase tracking-widest px-6 py-3 hover:text-focalCyan transition-colors flex items-center"
            >
-              <i className="fas fa-microchip mr-2 animate-pulse"></i>
+              <i className="fas fa-microchip mr-2"></i>
               Launch AI Lab
            </button>
            <button className="bg-white text-focalNavy text-xs font-black uppercase tracking-widest px-8 py-4 rounded-xl hover:bg-focalTeal hover:text-white transition-all shadow-xl shadow-white/5">
