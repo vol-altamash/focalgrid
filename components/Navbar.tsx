@@ -10,7 +10,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, onLaunchLab }) => {
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'glass-nav py-3 shadow-2xl' : 'bg-transparent py-8'}`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <div className="flex items-center space-x-3 group cursor-pointer" onClick={() => window.scrollTo(0, 0)}>
+        <div className="flex items-center space-x-3 group cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
           <div className="w-12 h-12 bg-gradient-to-br from-focalTeal to-focalCyan rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500 shadow-xl shadow-teal-950/50">
             <i className="fas fa-cube text-white text-2xl"></i>
           </div>
@@ -44,9 +44,12 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled, onLaunchLab }) => {
               <i className="fas fa-microchip mr-2"></i>
               Launch AI Lab
            </button>
-           <button className="bg-white text-focalNavy text-xs font-black uppercase tracking-widest px-8 py-4 rounded-xl hover:bg-focalTeal hover:text-white transition-all shadow-xl shadow-white/5">
+           <a 
+             href="#contact"
+             className="bg-white text-focalNavy text-xs font-black uppercase tracking-widest px-8 py-4 rounded-xl hover:bg-focalTeal hover:text-white transition-all shadow-xl shadow-white/5"
+           >
               Hire Us
-           </button>
+           </a>
         </div>
 
         <button className="lg:hidden text-white p-2">

@@ -23,6 +23,7 @@ import VisualTool from './components/VisualTool';
 import LiveTool from './components/LiveTool';
 import DeploymentTool from './components/DeploymentTool';
 import Chatbot from './components/Chatbot';
+import BookingCalendar from './components/BookingCalendar';
 import { ToolType } from './types';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -128,25 +129,37 @@ const App: React.FC = () => {
           <FAQ />
         </section>
 
-        <section id="contact" className="py-32 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-focalTeal/20 to-focalNavy -z-10"></div>
-          <div className="max-w-7xl mx-auto px-6 text-center">
+        <section id="contact" className="py-32 relative overflow-hidden bg-[#020617]">
+          <div className="absolute inset-0 bg-gradient-to-br from-focalTeal/10 to-transparent -z-10"></div>
+          <div className="max-w-7xl mx-auto px-6">
              <motion.div
-               initial={{ opacity: 0, scale: 0.9 }}
-               whileInView={{ opacity: 1, scale: 1 }}
+               initial={{ opacity: 0, y: 30 }}
+               whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
              >
-                <h2 className="text-4xl md:text-7xl font-display font-bold mb-8">Let's talk about <br/><span className="text-gradient">what's next.</span></h2>
-                <p className="text-xl text-slate-300 mb-12 max-w-2xl mx-auto leading-relaxed">
-                  Rethink what your company can do with the right partner by your side. Join the elite businesses scaling with Focalgrid.
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                   <button className="bg-focalTeal hover:bg-focalCyan text-white font-bold py-5 px-12 rounded-2xl transition-all shadow-2xl shadow-teal-900/20 text-lg flex items-center space-x-3">
-                     <span>Connect with us</span>
-                     <i className="fas fa-arrow-up-right-from-square text-sm"></i>
-                   </button>
-                   <button className="border border-white/20 hover:bg-white/5 text-white font-bold py-5 px-12 rounded-2xl transition-all text-lg">
-                     Explore Careers
+                <BookingCalendar />
+             </motion.div>
+             
+             <motion.div 
+               initial={{ opacity: 0 }}
+               whileInView={{ opacity: 1 }}
+               viewport={{ once: true }}
+               transition={{ delay: 0.5 }}
+               className="mt-24 pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8"
+             >
+                <div>
+                  <h4 className="text-white font-bold mb-2">Prefer email or a direct call?</h4>
+                  <p className="text-slate-500 text-sm">Our global support team responds within 2 business hours.</p>
+                </div>
+                <div className="flex items-center space-x-6">
+                   <a href="mailto:hello@focalgrid.systems" className="text-focalTeal font-bold hover:text-focalCyan transition-colors flex items-center space-x-2">
+                      <i className="far fa-envelope"></i>
+                      <span>hello@focalgrid.systems</span>
+                   </a>
+                   <div className="w-px h-6 bg-white/10 hidden md:block"></div>
+                   <button className="text-slate-400 hover:text-white transition-colors flex items-center space-x-2">
+                      <i className="fab fa-whatsapp"></i>
+                      <span>Enterprise Chat</span>
                    </button>
                 </div>
              </motion.div>
