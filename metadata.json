@@ -1,0 +1,8 @@
+{
+  "name": "Focalgrid Systems",
+  "description": "Global digital software house delivering premium end-to-end AI, enterprise, and creative solutions.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ]
+}
